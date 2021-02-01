@@ -70,4 +70,4 @@ var resetSelected = function (event) {
 
 document.addEventListener("mouseleave", resetSelected, true);
 document.addEventListener("blur", resetSelected, true);
-
+    
