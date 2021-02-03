@@ -71,3 +71,19 @@ var resetSelected = function (event) {
 document.addEventListener("mouseleave", resetSelected, true);
 document.addEventListener("blur", resetSelected, true);
     
+/* NIVELL 2 */
+var resetSelectedClic = function (event) {
+  if (!event.target.closest) return;
+  var form = event.target.closest(".rating");
+  if (!form) return;
+
+  var stars = Array.from(form.querySelectorAll(".star"));
+
+  var selected = form.querySelector('.star[aria-pressed="true"]');
+
+  stars.forEach(function (star, index) {
+      star.classList.remove("selected");
+  });
+};
+
+document.addEventListener("click", resetSelectedClic, false);
